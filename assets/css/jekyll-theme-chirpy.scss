@@ -20,16 +20,7 @@
 
 // 1. #sidebar에 공통적으로 적용될 스타일
 // (글래스모피즘 블러, 모서리 둥글기)
-#sidebar {
-    backdrop-filter: blur(15px); /* 글래스모피즘 블러 효과 */
-    -webkit-backdrop-filter: blur(15px); /* Safari 호환성 */
 
-    // 공통 테두리는 제거하거나 아주 미세하게 설정
-    border: none;
-
-    border-radius: 12px; /* 부드러운 모서리 */
-    box-sizing: border-box;
-}
 
 // @media (prefers-color-scheme: dark)는 현재 사용자의 시스템 설정이 다크 모드일 때만 적용됩니다.
 // 이 안에서 data-mode에 따라 밝은 테마와 어두운 테마 스타일을 분기합니다.
@@ -38,48 +29,20 @@
     // --- 1.1. 실제 테마가 '라이트 모드'일 때 (data-mode='light'): 플로팅 그림자 효과 (변경 없음) ---
     html[data-mode='light'] {
         #sidebar {
-            background-color: rgba(248, 248, 248, 0.95);
+            --sidebar-bg: linear-gradient(to bottom, #E6F7FF, #FFEBF2);
 
-            box-shadow:
-                0 20px 40px rgba(0, 0, 0, 0.15),
-                0 8px 20px rgba(0, 0, 0, 0.08),
-                inset 0 0 0 1px rgba(0, 0, 0, 0.03);
 
-            --site-title-color: #333333;
-            --sidebar-muted-color: #555555;
-            --avatar-border-color: #E0E0E0;
-            color: var(--sidebar-muted-color);
         }
     }
+}
 
     // --- 1.2. 실제 테마가 '다크 모드'일 때 (data-mode='dark' 또는 data-mode 없음): 단정한 회색 배경 + 액센트 라인 + 은은한 빛나는 글래스모피즘 ---
     html:not([data-mode]),
     html[data-mode='dark'] {
-        --link-color : #B0E0FF;
+
         #sidebar {
             // **여기 변경:** 사이드바 배경 색상 조정 (더 진하고 단정한 회색)
-            background-color: rgba(20, 20, 20, 0.6); /* 더 어두운 회색 (기존 29,38,51 보다) 투명도 약간 높임 */
-            // background-color: rgba(25, 25, 25, 0.7); /* 좀 더 부드러운 진회색에 투명도 높게 */
-            // background-color: rgba(30, 30, 30, 0.8); /* 더 불투명한 진회색 */
-
-
-            // 액센트 라인 색상 (다크 모드)
-            // 배경색이 진해지면 라인 색상을 좀 더 밝게 유지하여 대비를 줄 수 있습니다.
-
-            // 그림자/발광 효과 강도 조정 (은은하게 유지)
-            box-shadow:
-                0 0 20px rgba(170, 220, 255, 0.3), /* 빛 강도 0.35 -> 0.3으로 더 낮춤 */
-                0 0 10px rgba(170, 220, 255, 0.3), /* 외부 빛 강도 0.15 -> 0.1으로 더 낮춤 */
-                inset 0 0 10px rgba(255, 255, 255, 0.03); /* 내부 그림자 투명도 0.05 -> 0.03으로 낮춤 */
-
-            // 텍스트/아이콘 색상 관련 변수 및 적용
-            // 배경이 진해지므로 텍스트 색상은 충분히 밝게 유지하는 것이 좋습니다.
-            --site-title-color: #d7d7d7; // 사이트 제목 색상 (조금 더 밝게)
-            --sidebar-muted-color: #949494; // 메뉴 글자 색상 (액센트 라인 색과 유사하게, 발광 느낌 유지)
-            --avatar-border-color: rgba(170, 220, 255, 0.6); // 아바타 테두리도 약간 밝게
-            color: var(--sidebar-muted-color);
-        }
-
+            --sidebar-bg: linear-gradient(to bottom, #112A4A, #451020);
 }
 
 }
