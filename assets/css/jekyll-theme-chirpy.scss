@@ -34,12 +34,12 @@
         box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
         backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 255, 255, 0.3);
         transition: all 0.3s ease;
         margin-top: 40px;
+        padding-top: 1rem;
         padding-left: 2rem !important;
         padding-right: 2rem !important;
-        padding-bottom: 2rem;
+        padding-bottom: 1rem;
 
     }
     #topbar-wrapper{
@@ -47,7 +47,6 @@
         box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
         backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 255, 255, 0.3);
         transition: all 0.3s ease;
         width : 96%;
         margin-left: 2%;
@@ -60,7 +59,7 @@
 
         #sidebar {
             background: rgba(255, 255, 255, 0.05);
-            // border-radius: 20px;
+            border-radius: 10px;
             box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
@@ -93,7 +92,6 @@
             box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
             transition: all 0.3s ease;
             --site-title-color : #e8e8e8;
             --sidebar-muted-color: #b0b0b0;
