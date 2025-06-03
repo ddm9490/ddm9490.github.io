@@ -25,24 +25,95 @@
 // @media (prefers-color-scheme: dark)는 현재 사용자의 시스템 설정이 다크 모드일 때만 적용됩니다.
 // 이 안에서 data-mode에 따라 밝은 테마와 어두운 테마 스타일을 분기합니다.
 @media (prefers-color-scheme: dark) {
+    main h1{
+        margin-top: 2rem;
+    }
+    .px-1{
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 20px;
+        box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        transition: all 0.3s ease;
+        margin-top: 40px;
+        padding-left: 2rem !important;
+        padding-right: 2rem !important;
+        padding-bottom: 2rem;
 
-    // --- 1.1. 실제 테마가 '라이트 모드'일 때 (data-mode='light'): 플로팅 그림자 효과 (변경 없음) ---
+    }
+    #topbar-wrapper{
+        border-radius: 20px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        transition: all 0.3s ease;
+        width : 96%;
+        margin-left: 2%;
+    }
+    #toc-bar{
+        border-radius: 10px;
+    }
     html[data-mode='light'] {
-        #sidebar {
-            --sidebar-bg: linear-gradient(to bottom, #E6F7FF, #FFEBF2);
+        --main-bg: linear-gradient(135deg, #E6F7FF 0%, #FFEBF2 100%); // 어두운 배경 색상
 
+        #sidebar {
+            background: rgba(255, 255, 255, 0.05);
+            // border-radius: 20px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
 
         }
+        #topbar-wrapper{
+            background: rgba(255,255,255,0.1);
+
+        }
+        .post-preview{
+            background: rgba(255, 255, 255, 0.30);
+                    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+                    backdrop-filter: blur(10px);
+                    -webkit-backdrop-filter: blur(10px);
+                    transition: all 0.3s ease;
+        }
+
     }
 }
 
     // --- 1.2. 실제 테마가 '다크 모드'일 때 (data-mode='dark' 또는 data-mode 없음): 단정한 회색 배경 + 액센트 라인 + 은은한 빛나는 글래스모피즘 ---
     html:not([data-mode]),
     html[data-mode='dark'] {
-
+        --main-bg: linear-gradient(135deg, #112A4A 0%, #451020 120%); // 어두운 배경 색상
         #sidebar {
-            // **여기 변경:** 사이드바 배경 색상 조정 (더 진하고 단정한 회색)
-            --sidebar-bg: linear-gradient(to bottom, #112A4A, #451020);
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+            --site-title-color : #e8e8e8;
+            --sidebar-muted-color: #b0b0b0;
 }
+    #topbar-wrapper{
+                --text-muted-color: #b0b0b0;
+                background: rgba(255, 255, 255, 0.05);
+
+    }
+    .post-preview{
+                background: rgba(0, 0, 0, 0.30);
+                box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+                backdrop-filter: blur(10px);
+                -webkit-backdrop-filter: blur(10px);
+                transition: all 0.3s ease;
+                --text-muted-color: #b0b0b0;
+    }
+    #panel-wrapper{
+        --label-color: #c6c6c6;
+        --text-muted-color: #b0b0b0;
+    }
 
 }
